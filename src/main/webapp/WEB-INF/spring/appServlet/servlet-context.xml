@@ -27,19 +27,19 @@
 	
 	<context:component-scan base-package="com.mycompany.myapp06.**.controller" />
 
-	<beans:bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+	<!--<beans:bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
 		<beans:property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
 		<beans:property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"/>
 		<beans:property name="username" value="scott"/>
 		<beans:property name="password" value="TIGER"/>
 	</beans:bean>
-	<beans:bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+	  <beans:bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<beans:property name="dataSource" ref="dataSource"/>
 		<beans:property name="configLocation" value="classpath:mybatis-config.xml"/>
 	</beans:bean>
 	<beans:bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
 		<beans:constructor-arg ref="sqlSessionFactory"/>
-	</beans:bean>
+	</beans:bean> -->
 	<!--  이 방식보단 annotation 방식 권장 
 	<beans:bean id="testAop" class="com.mycompany.myapp06.common.service.AroundLog"/>
 	<aop:config>
@@ -75,8 +75,5 @@
 	</aop:config>
 	 -->
 	<tx:annotation-driven/>
-	
-	
-	
 	
 </beans:beans>

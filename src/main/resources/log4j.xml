@@ -9,10 +9,18 @@
 			<param name="ConversionPattern" value="%-5p: %c - %m%n" />
 		</layout>
 	</appender>
+	<!-- fileappender -->
+	<appender name="filedest" class="org.apache.log4j.FileAppender">
+		<param name="file" value="./logs/file.log" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%-5p: %c - %m%n" />
+		</layout>
+	</appender>
 	
 	<!-- Application Loggers -->
 	<logger name="com.mycompany.myapp06">
-		<level value="info" />
+		<level value="debug" />
+		<appender-ref ref="filedest"/>
 	</logger>
 	
 	<!-- 3rdparty Loggers -->
